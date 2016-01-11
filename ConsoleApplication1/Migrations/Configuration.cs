@@ -13,19 +13,20 @@ namespace ConsoleApplication1.Migrations
         }
 
         protected override void Seed(ConsoleApplication1.Context context)
-        {
-            //  This method will be called after migrating to the latest version.
+        {            
+            context.Students.AddOrUpdate(
+            s => s.SName,
+            new Student { SName = "Andrew Peters" },
+            new Student { SName = "Brice Lambson" },
+            new Student { SName = "Rowan Miller" }
+            );
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Teachers.AddOrUpdate(
+            s => s.TName,
+            new Teacher { TName = "Andrew Peters" },
+            new Teacher { TName = "Brice Lambson" },
+            new Teacher { TName = "Rowan Miller" }
+            );  
         }
     }
 }
