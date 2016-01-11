@@ -20,13 +20,15 @@ namespace ConsoleApplication1.Migrations
             new Student { SName = "Brice Lambson" },
             new Student { SName = "Rowan Miller" }
             );
+            context.SaveChanges();
 
             context.Teachers.AddOrUpdate(
             s => s.TName,
             new Teacher { TName = "Andrew Peters" },
             new Teacher { TName = "Brice Lambson" },
             new Teacher { TName = "Rowan Miller" }
-            );  
+            );
+            context.SaveChanges();
         }
     }
 }
